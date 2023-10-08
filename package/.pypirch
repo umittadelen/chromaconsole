@@ -1,8 +1,0 @@
-[distutils]
-index-servers = 
-    chromaconsole
-
-[chromaconsole]
-repository = https://upload.pypi.org/legacy/
-username = __token__
-password = pypi-AgENdGVzdC5weXBpLm9yZwIkY2VhYTdjMGEtOTk5YS00MzljLWJmNTAtMjRkYzRjZjA2NDBiAAIVWzEsWyJjaHJvbWFjb25zb2xlIl1dAAIsWzIsWyJjZGMzMzhmZi1hNTIxLTRlZjktOGQ2NC1hZmQyNDhjNGE2NDciXV0AAAYgxPagyMtLSck6e0G-87T7IMYeLWkhPcqyNGGOOPJh294
