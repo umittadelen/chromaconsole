@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: chromaconsole
-Version: 0.2.2
+Version: 0.2.3
 Summary: a small colorfull module
 Author-email: Umit Tasdelen <umittadelen1277@gmail.com>
 Project-URL: Homepage, https://github.com/umit-09/chromaconsole
@@ -11,6 +11,12 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENSE.txt
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+<span style="color:#fff; font-family: quicksand;">
 
 # Chroma Console
 
@@ -51,3 +57,4 @@ print(f"{Style.strikethrough()}Strikethrough {Style.reset()}")
 
 print(f"{Style.bold()}{Style.italic()}bold+italic {Style.reset()}")
 ```
+</span>
