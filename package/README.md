@@ -1,6 +1,6 @@
 # Chroma Console
 
-Chwoma consowe is a python package fur adding cowow and stywe to tewminyaw text output using ANSI escape codes.
+Chroma console is a python package for adding color and style to terminal text output using ANSI escape codes.
 
 ## Installation
 
@@ -24,11 +24,11 @@ Color.background(*args)
 ```python
 from chromaconsole import Color, Style
 
-print(f"{Color.text(r, g, b)}hewe is RGB cowowed text{Style.reset()}")
-print(f"{Color.background(r, g, b)}hewe is RGB cowowed backgwound{Style.reset()}")
+print(f"{Color.text(r, g, b)}here is RGB colored text{Style.reset()}")
+print(f"{Color.background(r, g, b)}here is RGB colored background{Style.reset()}")
 
-print(f"{Color.text('#rrggbb')}hewe is HEX cowowed text{Style.reset()}")
-print(f"{Color.background('#rrggbb')}hewe is HEX cowowed backgwound{Style.reset()}")
+print(f"{Color.text('#rrggbb')}here is HEX colored text{Style.reset()}")
+print(f"{Color.background('#rrggbb')}here is HEX colored background{Style.reset()}")
 
 print(f"{Style.bold()}Bold {Style.reset()}")
 print(f"{Style.italic()}Italic {Style.reset()}")

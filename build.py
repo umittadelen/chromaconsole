@@ -13,6 +13,6 @@ while True:
     elif answer == '3':
         os.system("py -m build")
     elif answer == '4':
-        os.system("py -m twine upload --repository chromaconsole dist/*")
+        os.system("py -m twine upload --repository testpypi dist/*")
     else:
         print("Invalid choice. Please select a valid option.")
