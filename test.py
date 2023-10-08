@@ -12,7 +12,6 @@ text = (
     f"{Style.italic()}Italic Text{Style.reset()}\n"
     f"{Style.underline()}Underlined Text{Style.reset()}\n"
     f"{Style.strikethrough()}Strikethrough Text{Style.reset()}\n"
-    f"{Style.bold()}{Style.italic()}{Style.strikethrough()}{Style.underline()}All In One{Style.reset()}\n"
     f"{Style.bold()}{Style.italic()}{Style.strikethrough()}{Style.underline()}{Color.text(255, 250, 127)}All {Color.text(10, 200, 150)}In {Color.text(40, 200, 250)}One{Style.reset()}\n"
     f"{Color.text(255, 255, 255)}White Text{Style.reset()}\n"
     f"{Color.text(255, 0, 0)}Red Text{Style.reset()}\n"
@@ -22,7 +21,8 @@ text = (
     f"{Color.text('#1cba8b')}Hex Text{Style.reset()}\n"
     f"{Color.text(255, 0, 255)}Magenta Text{Style.reset()}\n"
     f"{Color.text(0, 255, 255)}Cyan Text{Style.reset()}\n"
-    f"{Color.text('#f2046f')}{Style.bold()}bold {Style.reset()}{Color.text('#f2046f')}{Style.italic()}italic {Style.bold()}both{Style.reset()}"
+    f"{Color.text('#f2046f')}{Style.bold()}bold {Style.reset()}{Color.text('#f2046f')}{Style.italic()}italic {Style.bold()}both{Style.reset()}\n"
+    f"{Color.text(200, 100, 100)}A{Style.bold()}A{Style.reset()}{Style.italic()}{Color.text(200, 100, 100)}A{Style.bold()}A{Style.reset()}\n"
 )
 
 print(text)
