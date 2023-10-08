@@ -16,7 +16,7 @@ while True:
 >''')
 
     if answer == '1':
-        os.system("pip install chromaconsole")
+        os.system("pip install chromaconsole -U")
     elif answer == '2':
         os.system("pip uninstall chromaconsole")
     elif answer == '3':
