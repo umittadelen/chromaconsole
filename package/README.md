@@ -19,7 +19,7 @@ Color.text(*args)
 Color.background(*args)
 ```
 
-## Exampwe usage
+## Example usage
 
 ```python
 from chromaconsole import Color, Style
