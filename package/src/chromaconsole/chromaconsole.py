@@ -1,34 +1,59 @@
 class Style:
     @staticmethod
     def bold():
+        '''
+        makes the text bold
+        '''
         return "\033[1m"
 
     @staticmethod
     def italic():
+        '''
+        makes the text italic
+        '''
         return "\033[3m"
 
     @staticmethod
     def underline():
+        '''
+        makes the text underlined
+        '''
         return "\033[4m"
     
     @staticmethod
     def strikethrough():
+        '''
+        makes the text strikethrough
+        '''
         return "\033[9m"
     
     @staticmethod
     def dimmer():
+        '''
+        makes the text dimmer
+        '''
         return "\033[2m"
     
     @staticmethod
     def normal():
+        '''
+        resets the style of the text
+        '''
         return "\033[22m"
     
     @staticmethod
     def reset():
+        '''
+        resets style and color of the text
+        '''
         return "\033[0m"
     
     @staticmethod
     def minecraft(*args):
+        '''
+        converts minecraft styled text to colored text
+        Style.minecraft("§","§l§ahello §r§5world§e!§r")
+        '''
         symbol = "§"
 
         codes = {
@@ -64,10 +89,20 @@ class Style:
 class Color:
     @staticmethod
     def text(*args):
+        '''
+        changes the color of the text
+        Color.text(r, g, b)
+        Color.text("#rrggbb")
+        '''
         r, g, b = args if len(args) == 3 else tuple(int(args[0].lstrip("#")[i:i+2], 16) for i in (0, 2, 4))
         return f"\033[38;2;{r};{g};{b}m"
 
     @staticmethod
     def background(*args):
+        '''
+        changes the color of the text background
+        Color.background(r, g, b)
+        Color.background("#rrggbb")
+        '''
         r, g, b = args if len(args) == 3 else tuple(int(args[0].lstrip("#")[i:i+2], 16) for i in (0, 2, 4))
         return f"\033[48;2;{r};{g};{b}m"
