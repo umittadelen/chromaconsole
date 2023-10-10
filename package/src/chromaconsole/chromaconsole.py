@@ -28,11 +28,13 @@ class Style:
         return "\033[9m"
     
     @staticmethod
-    def dimmer():
-        '''
-        makes the text dimmer
-        '''
-        return "\033[2m"
+    def negative():
+        """
+        inverts the text colors
+        """
+        return "\033[7m"
+        
+    # end def
     
     @staticmethod
     def normal():
