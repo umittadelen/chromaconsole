@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chromaconsole"
-version = "0.2.8.8"
+version = "0.2.8.9"
 authors = [
   {name = "Umit Tasdelen", email = "umittadelen1277@gmail.com"}
 ]
@@ -19,6 +19,8 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent"
 ]
