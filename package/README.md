@@ -21,6 +21,7 @@ Style.italic()
 Style.underline()
 Style.strikethrough()
 Style.reset()
+Style.minecraft(*args)
 Color.text(*args)
 Color.background(*args)
 ```
@@ -42,5 +43,6 @@ print(f"{Style.underline()}Underline {Style.reset()}")
 print(f"{Style.strikethrough()}Strikethrough {Style.reset()}")
 
 print(f"{Style.bold()}{Style.italic()}bold+italic {Style.reset()}")
+print(f"{Style.minecraft('§','§ahello §4world§r')}")
 ```
 </span>

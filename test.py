@@ -23,7 +23,8 @@ text = (
     f"{Color.text(0, 255, 255)}Cyan Text{Style.reset()}\n"
     f"{Color.text('#f2046f')}{Style.bold()}bold {Style.reset()}{Color.text('#f2046f')}{Style.italic()}italic {Style.bold()}both{Style.reset()}\n"
     f"{Color.text(200, 100, 100)}A{Style.bold()}A{Style.reset()}{Style.italic()}{Color.text(200, 100, 100)}A{Style.bold()}A{Style.reset()}\n"
-    f"{Style.bold()}{Color.background('#ffffff')}{Color.text('#000000')}white bg black bold text{Style.reset()}"
+    f"{Style.bold()}{Color.background('#ffffff')}{Color.text('#000000')}white bg black bold text{Style.reset()}\n"
+    f"{Style.minecraft('§','§ahello §4world§r')}\n"
 )
 
 print(text)

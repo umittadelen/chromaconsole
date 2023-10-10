@@ -12,7 +12,7 @@ while True:
 5: upload to pypi.org
 6: run test.py here
 7: run test.py on CMD
-
+8: install from file
 >''')
 
     if answer == '1':
@@ -29,5 +29,7 @@ while True:
         os.system("py ../test.py")
     elif answer == '7':
         os.system(f'start cmd /k python ../test.py')
+    elif answer == '8':
+        os.system("pip install .")
     else:
         print("Invalid choice. Please select a valid option.")
