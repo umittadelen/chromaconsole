@@ -19,6 +19,11 @@ class Style:
     def reset():
         return "\033[0m"
     
+    #BRIGHT    = 1
+    #DIM       = 2
+    #NORMAL    = 22
+    #RESET_ALL = 0
+    
     @staticmethod
     def minecraft(*args):
         symbol = "§"
