@@ -16,13 +16,16 @@ class Style:
         return "\033[9m"
     
     @staticmethod
+    def dimmer():
+        return "\033[2m"
+    
+    @staticmethod
+    def normal():
+        return "\033[22m"
+    
+    @staticmethod
     def reset():
         return "\033[0m"
-    
-    #BRIGHT    = 1
-    #DIM       = 2
-    #NORMAL    = 22
-    #RESET_ALL = 0
     
     @staticmethod
     def minecraft(*args):
