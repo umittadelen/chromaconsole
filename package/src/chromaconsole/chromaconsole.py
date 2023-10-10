@@ -51,7 +51,7 @@ class Style:
     @staticmethod
     def minecraft(*args):
         '''
-        converts minecraft styled text to colored text
+        converts minecraft styled text to colored text\n
         Style.minecraft("§","§l§ahello §r§5world§e!§r")
         '''
         symbol = "§"
@@ -90,8 +90,8 @@ class Color:
     @staticmethod
     def text(*args):
         '''
-        changes the color of the text
-        Color.text(r, g, b)
+        changes the color of the text\n
+        Color.text(r, g, b)\n
         Color.text("#rrggbb")
         '''
         r, g, b = args if len(args) == 3 else tuple(int(args[0].lstrip("#")[i:i+2], 16) for i in (0, 2, 4))
@@ -100,8 +100,8 @@ class Color:
     @staticmethod
     def background(*args):
         '''
-        changes the color of the text background
-        Color.background(r, g, b)
+        changes the color of the text background\n
+        Color.background(r, g, b)\n
         Color.background("#rrggbb")
         '''
         r, g, b = args if len(args) == 3 else tuple(int(args[0].lstrip("#")[i:i+2], 16) for i in (0, 2, 4))

@@ -13,7 +13,7 @@ while True:
 6: run test.py here
 7: run test.py on CMD
 8: install from file
->''')
+> ''')
 
     if answer == '1':
         os.system("pip install chromaconsole -U")
