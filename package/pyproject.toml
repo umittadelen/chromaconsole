@@ -4,19 +4,25 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chromaconsole"
-version = "0.2.8.6"
+version = "0.2.8.8"
 authors = [
-  {name="Umit Tasdelen", email="umittadelen1277@gmail.com"},
+  {name = "Umit Tasdelen", email = "umittadelen1277@gmail.com"}
 ]
-description = "a small colorfull module"
+description = "A small colorful module to change text colors in terminal"
+keywords = ["color", "console", "terminal", "text"]
 readme = "README.md"
 requires-python = ">=3"
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+    "Operating System :: OS Independent"
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/umit-09/chromaconsole"
-"Bug Tracker" = "https://github.com/umit-09/chromaconsole/issues"
+Homepage = "https://github.com/umit-09/chromaconsole"
+Bug_Tracker = "https://github.com/umit-09/chromaconsole/issues"

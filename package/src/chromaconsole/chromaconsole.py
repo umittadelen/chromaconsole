@@ -34,8 +34,6 @@ class Style:
         """
         return "\033[7m"
         
-    # end def
-    
     @staticmethod
     def normal():
         '''

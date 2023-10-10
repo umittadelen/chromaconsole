@@ -1,11 +1,17 @@
 Metadata-Version: 2.1
 Name: chromaconsole
-Version: 0.2.8.6
-Summary: a small colorfull module
+Version: 0.2.8.8
+Summary: A small colorful module to change text colors in terminal
 Author-email: Umit Tasdelen <umittadelen1277@gmail.com>
 Project-URL: Homepage, https://github.com/umit-09/chromaconsole
-Project-URL: Bug Tracker, https://github.com/umit-09/chromaconsole/issues
+Project-URL: Bug_Tracker, https://github.com/umit-09/chromaconsole/issues
+Keywords: color,console,terminal,text
 Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3
@@ -34,6 +40,8 @@ Style.bold()
 Style.italic()
 Style.underline()
 Style.strikethrough()
+Style.negative()
+Style.normal()
 Style.reset()
 Style.minecraft(*args)
 Color.text(*args)
