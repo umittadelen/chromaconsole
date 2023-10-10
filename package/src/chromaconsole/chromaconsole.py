@@ -87,7 +87,7 @@ class Style:
             for key, value in codes.items():
                 text = text.replace(key, value)
         return text
-
+    
 class Color:
     @staticmethod
     def text(*args):
@@ -96,7 +96,19 @@ class Color:
         Color.text(r, g, b)\n
         Color.text("#rrggbb")
         '''
-        r, g, b = args if len(args) == 3 else tuple(int(args[0].lstrip("#")[i:i+2], 16) for i in (0, 2, 4))
+        if len(args) == 1:
+            color = args[0].lstrip("#")
+            if len(color) == 3:
+                r, g, b = (int(c * 2, 16) for c in color)
+            elif len(color) == 6:
+                r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+            else:
+                raise ValueError("Invalid color format")
+        elif len(args) == 3:
+            r, g, b = args
+        else:
+            raise ValueError("Invalid number of arguments")
+
         return f"\033[38;2;{r};{g};{b}m"
 
     @staticmethod
@@ -106,5 +118,17 @@ class Color:
         Color.background(r, g, b)\n
         Color.background("#rrggbb")
         '''
-        r, g, b = args if len(args) == 3 else tuple(int(args[0].lstrip("#")[i:i+2], 16) for i in (0, 2, 4))
+        if len(args) == 1:
+            color = args[0].lstrip("#")
+            if len(color) == 3:
+                r, g, b = (int(c * 2, 16) for c in color)
+            elif len(color) == 6:
+                r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+            else:
+                raise ValueError("Invalid color format")
+        elif len(args) == 3:
+            r, g, b = args
+        else:
+            raise ValueError("Invalid number of arguments")
+
         return f"\033[48;2;{r};{g};{b}m"
