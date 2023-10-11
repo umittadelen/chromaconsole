@@ -52,38 +52,44 @@ class Style:
     def minecraft(*args):
         '''
         converts minecraft styled text to colored text\n
-        Style.minecraft("§","§l§ahello §r§5world§e!§r")
+        Style.minecraft("&","&l&ahello &r&5world&e!&r")\n
+        Style.minecraft("§l§ahello §r§5world§e!§r")
         '''
         symbol = "§"
 
         codes = {
-            f"{symbol}0": Color.text("#000"),
-            f"{symbol}1": Color.text("#00a"),
-            f"{symbol}2": Color.text("#0a0"),
-            f"{symbol}3": Color.text("#0aa"),
-            f"{symbol}4": Color.text("#a00"),
-            f"{symbol}5": Color.text("#a0a"),
-            f"{symbol}6": Color.text("#fa0"),
-            f"{symbol}7": Color.text("#aaa"),
-            f"{symbol}8": Color.text("#555"),
-            f"{symbol}9": Color.text("#55f"),
-            f"{symbol}a": Color.text("#5f5"),
-            f"{symbol}b": Color.text("#5ff"),
-            f"{symbol}c": Color.text("#f55"),
-            f"{symbol}d": Color.text("#f5f"),
-            f"{symbol}e": Color.text("#ff5"),
-            f"{symbol}f": Color.text("#fff"),
-            f"{symbol}l": Style.bold(),
-            f"{symbol}m": Style.strikethrough(),
-            f"{symbol}n": Style.underline(),
-            f"{symbol}o": Style.italic(),
-            f"{symbol}r": Style.reset()
+            f"0": Color.text("#000"),
+            f"1": Color.text("#00a"),
+            f"2": Color.text("#0a0"),
+            f"3": Color.text("#0aa"),
+            f"4": Color.text("#a00"),
+            f"5": Color.text("#a0a"),
+            f"6": Color.text("#fa0"),
+            f"7": Color.text("#aaa"),
+            f"8": Color.text("#555"),
+            f"9": Color.text("#55f"),
+            f"a": Color.text("#5f5"),
+            f"b": Color.text("#5ff"),
+            f"c": Color.text("#f55"),
+            f"d": Color.text("#f5f"),
+            f"e": Color.text("#ff5"),
+            f"f": Color.text("#fff"),
+            f"l": Style.bold(),
+            f"m": Style.strikethrough(),
+            f"n": Style.underline(),
+            f"o": Style.italic(),
+            f"r": Style.reset()
             }
 
         if len(args) == 2:
             symbol, text = args
             for key, value in codes.items():
-                text = text.replace(key, value)
+                text = text.replace(symbol+key, value)
+
+        if len(args) == 1:
+            text = args
+            for key, value in codes.items():
+                text = text.replace(symbol+key, value)
         return text
     
 class Color:
