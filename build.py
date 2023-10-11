@@ -1,4 +1,4 @@
-import os
+import os, shutil
 
 package_directory = "package"
 os.chdir(package_directory)
@@ -20,6 +20,8 @@ while True:
     elif answer == '2':
         os.system("pip uninstall chromaconsole")
     elif answer == '3':
+        if os.path.isdir('dist'):
+            shutil.rmtree('dist')
         os.system("py -m build")
     elif answer == '4':
         os.system("py -m twine upload --repository testpypi dist/*")
