@@ -1,3 +1,22 @@
+import sys
+import platform
+
+def just_fix_windows_console_coloring():
+    if platform.system() == "Windows":
+        if sys.stdout is not None:
+            if hasattr(sys.stdout, "fileno"):
+                try:
+                    import ctypes
+                    kernel32 = ctypes.windll.kernel32
+                    kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
+                except Exception:
+                    pass
+            else:
+                # This is likely an IPython environment where sys.stdout doesn't have fileno()
+                pass
+
+just_fix_windows_console_coloring()
+
 class Style:
     @staticmethod
     def bold():
