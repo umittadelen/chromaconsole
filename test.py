@@ -6,7 +6,7 @@ text = (
     f"{Color.text(0, 0, 255)}Blue Text{Style.reset()}\n"
     f"{Color.text('#F0F')}Magenta Text{Style.reset()}\n"
     f"{Color.background(255, 255, 0)}{Style.bold()}{Color.text(0, 0, 255)}Yellow Background{Style.reset()}\n"
-    f"{Color.background('#0FF')}Cyan Background{Style.reset()}\n"
+    f"{Color.background('#0FF')}{Color.text('#000')}Cyan Background{Style.reset()}\n"
     f"normal Text\n"
     f"{Style.bold()}Bold Text{Style.reset()}\n"
     f"{Style.italic()}Italic Text{Style.reset()}\n"
