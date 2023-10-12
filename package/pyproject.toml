@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chromaconsole"
-version = "0.3"
+version = "0.3.0.1"
 authors = [
   {name = "Umit Tasdelen", email = "umittadelen1277@gmail.com"}
 ]
 description = "A small colorful module to change text colors in terminal"
-keywords = ["color", "console", "terminal", "text"]
+keywords = ["color", "console", "terminal", "text", "style"]
 readme = "README.md"
 requires-python = ">=3"
 classifiers = [
