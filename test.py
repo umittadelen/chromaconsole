@@ -25,7 +25,12 @@ text = (
     f"{Color.text(200, 100, 100)}A{Style.bold()}A{Style.reset()}{Style.italic()}{Color.text(200, 100, 100)}A{Style.bold()}A{Style.reset()}\n"
     f"{Style.bold()}{Color.background('#fff')}{Color.text('#000')}white bg black bold text{Style.reset()}\n"
     f"{Style.minecraft('§','§ahello §4world§r')}\n"
-    f"{Color.text('#fa0')}text {Style.negative()}text\n{Style.reset()}"
+    f"{Color.text('#fa0')}text {Style.negative()}text\n{Style.reset()}\n"
+    f"{Color.text(255, 0, 0)}{Style.slowblink()}Blinking Red Text{Style.reset()}\n"
+    f"{Style.slowblink()}slow blink Text{Style.reset()}\n"
+    f"{Style.rapidblink()}rapid blink Text{Style.reset()}\n"
+    f"{Color.text('#8af')}{Color.background('#acb')}{Style.slowblink()}Blinking+color+background Text{Style.reset()}\n"
+    f"{Color.text(255, 127, 0)}hidden {Style.hidden()}text{Style.reset()}\n"
 )
 
 print(text)

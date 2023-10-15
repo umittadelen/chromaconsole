@@ -86,7 +86,7 @@ class Style:
     
     def hidden():
         """
-        hides the text
+        hides the text 
         """
         return "\033[8"
     # end def
