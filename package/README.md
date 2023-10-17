@@ -47,7 +47,8 @@ print(f"{Style.bold()}{Style.italic()}bold+italic {Style.reset()}")
 print(f"{Style.minecraft('§','§ahello §4world§r')}")
 ```
 
-##.enable() and .disable():
+## .enable() and .disable():
+
 After executing the `Style.disable()` command, the system will no longer apply coloring and styling to the content. To re-enable these features, simply use the `Style.enable()` command.
 
 ```python
