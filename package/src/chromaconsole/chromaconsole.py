@@ -24,6 +24,7 @@ class Style:
     @staticmethod
     def bold():
         '''
+        Bold or increased intensity\n
         makes the text bold
         '''
         return "\033[1m"
@@ -31,6 +32,7 @@ class Style:
     @staticmethod
     def italic():
         '''
+        Italic\n
         makes the text italic
         '''
         return "\033[3m"
@@ -38,6 +40,7 @@ class Style:
     @staticmethod
     def underline():
         '''
+        Underline\n
         makes the text underlined
         '''
         return "\033[4m"
@@ -45,6 +48,7 @@ class Style:
     @staticmethod
     def strikethrough():
         '''
+        [Crossed-out](https://en.wikipedia.org/wiki/Strikethrough), or strike\n
         makes the text strikethrough
         '''
         return "\033[9m"
@@ -52,6 +56,7 @@ class Style:
     @staticmethod
     def negative():
         """
+        [Reverse](https://en.wikipedia.org/wiki/Reverse_video) video or invert\n
         inverts the text colors
         """
         return "\033[7m"
@@ -59,6 +64,7 @@ class Style:
     @staticmethod
     def normal():
         '''
+        Normal intensity\n
         resets the style of the text
         '''
         return "\033[22m"
@@ -66,6 +72,7 @@ class Style:
     @staticmethod
     def reset():
         '''
+        Reset or normal\n
         resets style and color of the text
         '''
         return "\033[0m"
@@ -73,6 +80,7 @@ class Style:
     @staticmethod
     def slowblink():
         '''
+        Slow blink\n
         makes the text blinking
         '''
         return "\033[5m"
@@ -80,15 +88,17 @@ class Style:
     @staticmethod
     def rapidblink():
         '''
+        Rapid blink\n
         makes the text blinking
         '''
         return "\033[6m"
     
     def hidden():
         """
+        Conceal or hide\n
         hides the text
         """
-        return "\033[8"
+        return "\033[8m"
     # end def
     
     @staticmethod
