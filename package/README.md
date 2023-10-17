@@ -17,7 +17,12 @@ Style.strikethrough()
 Style.negative()
 Style.normal()
 Style.reset()
+Style.slowblink()
+Style.rapidblink()
+Style.hidden()
 Style.minecraft(*args)
+Style.enable()
+Style.disable()
 Color.text(*args)
 Color.background(*args)
 ```
@@ -40,4 +45,15 @@ print(f"{Style.strikethrough()}Strikethrough {Style.reset()}")
 
 print(f"{Style.bold()}{Style.italic()}bold+italic {Style.reset()}")
 print(f"{Style.minecraft('§','§ahello §4world§r')}")
+```
+
+##.enable() and .disable():
+After executing the `Style.disable()` command, the system will no longer apply coloring and styling to the content. To re-enable these features, simply use the `Style.enable()` command.
+
+```python
+#disable the coloring and styling
+Style.disable()
+print(f"{Color.text(r, g, b)}text without color{Style.reset()}")
+Style.enable()
+print(f"{Color.text(r, g, b)}text with color{Style.reset()}")
 ```
