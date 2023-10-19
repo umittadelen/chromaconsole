@@ -26,7 +26,7 @@ class Style:
     @staticmethod
     def disable():
         """
-        Disables all colors
+        Disables all things
         """
         global enabled
         enabled = False
@@ -34,7 +34,7 @@ class Style:
     @staticmethod
     def enable():
         """
-        Enables all colors
+        Enables all things
         """
         global enabled
         enabled = True
