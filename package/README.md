@@ -2,6 +2,8 @@
 
 Chroma console is a python package for adding color and style to terminal text output using ANSI escape codes.
 
+* if *requests* is installed this package updates automaticaly
+
 ## Installation
 
 ```shell
