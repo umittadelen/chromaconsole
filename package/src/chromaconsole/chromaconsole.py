@@ -397,6 +397,118 @@ class Color:
             return "\033[49m"
         else:
             return ""
+    
+    @staticmethod
+    def text_black():
+        if enabled:
+            return "\033[30m"
+        else:
+            return ""
+        
+    @staticmethod
+    def text_red():
+        if enabled:
+            return "\033[31m"
+        else:
+            return ""
+        
+    @staticmethod
+    def text_green():
+        if enabled:
+            return "\033[32m"
+        else:
+            return ""
+        
+    @staticmethod
+    def text_yellow():
+        if enabled:
+            return "\033[33m"
+        else:
+            return ""
+        
+    @staticmethod
+    def text_blue():
+        if enabled:
+            return "\033[34m"
+        else:
+            return ""
+        
+    @staticmethod
+    def text_magenta():
+        if enabled:
+            return "\033[35m"
+        else:
+            return ""
+        
+    @staticmethod
+    def text_cyan():
+        if enabled:
+            return "\033[36m"
+        else:
+            return ""
+    
+    @staticmethod
+    def text_white():
+        if enabled:
+            return "\033[37m"
+        else:
+            return ""
+        
+    @staticmethod
+    def bg_black():
+        if enabled:
+            return "\033[40m"
+        else:
+            return ""
+        
+    @staticmethod
+    def bg_red():
+        if enabled:
+            return "\033[41m"
+        else:
+            return ""
+        
+    @staticmethod
+    def bg_green():
+        if enabled:
+            return "\033[42m"
+        else:
+            return ""
+        
+    @staticmethod
+    def bg_yellow():
+        if enabled:
+            return "\033[43m"
+        else:
+            return ""
+        
+    @staticmethod
+    def bg_blue():
+        if enabled:
+            return "\033[44m"
+        else:
+            return ""
+        
+    @staticmethod
+    def bg_magenta():
+        if enabled:
+            return "\033[45m"
+        else:
+            return ""
+        
+    @staticmethod
+    def bg_cyan():
+        if enabled:
+            return "\033[46m"
+        else:
+            return ""
+    
+    @staticmethod
+    def bg_white():
+        if enabled:
+            return "\033[47m"
+        else:
+            return ""
 
 class Console:
     @staticmethod

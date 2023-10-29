@@ -1,5 +1,4 @@
 from chromaconsole import Color, Style
-import os
 
 text = (
     "normal\n"
