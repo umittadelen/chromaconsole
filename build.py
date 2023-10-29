@@ -24,14 +24,13 @@ while True:
             shutil.rmtree('dist')
         os.system("py -m build")
     elif answer == '4':
+        os.system("py -m twine upload --repository pypi dist/*")
         os.system("py -m twine upload --repository testpypi dist/*")
     elif answer == '5':
-        os.system("py -m twine upload --repository pypi dist/*")
-    elif answer == '6':
         os.system("py ../test.py")
-    elif answer == '7':
+    elif answer == '6':
         os.system(f'start cmd /k python ../test.py')
-    elif answer == '8':
+    elif answer == '7':
         os.system("pip install .")
     else:
         print("Invalid choice. Please select a valid option.")

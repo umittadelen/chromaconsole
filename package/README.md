@@ -11,7 +11,7 @@ pip install chromaconsole
 ```
 
 ## Functions
-```python
+```python {.line-numbers}
 Style.disable()
 Style.enable()
 Style.reset()
