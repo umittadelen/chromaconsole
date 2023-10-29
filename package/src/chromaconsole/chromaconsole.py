@@ -55,7 +55,8 @@ class Style:
     def bold(): #1m
         '''
         Bold or increased intensity\n
-        As with faint, the color change is a PC (SCO / [CGA](https://en.wikipedia.org/wiki/Color_Graphics_Adapter)) invention.[[38]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-SCO-39)\n
+        As with faint, the color change is a PC (SCO / [CGA](https://en.wikipedia.org/wiki/Color_Graphics_Adapter))
+        invention.[[38]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-SCO-39)\n
         '''
         if enabled:
             return "\033[1m"
@@ -88,7 +89,8 @@ class Style:
     def underlined(): #4m
         '''
         Underlined\n
-        Style extensions exist for Kitty, VTE, mintty, iTerm2 and Konsole.[[40]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-41)[[41]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-kitty-spec-42)[[42]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-konsole-43)
+        Style extensions exist for Kitty, VTE, mintty, iTerm2 and Konsole.[[40]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-41)
+        [[41]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-kitty-spec-42)[[42]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-konsole-43)
         '''
         if enabled:
             return "\033[4m"
@@ -121,7 +123,8 @@ class Style:
     def reverse(): #7m
         '''
         [Reverse](https://en.wikipedia.org/wiki/Reverse_video) video or invert\n
-        Swap foreground and background colors; inconsistent emulation[[43]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-console-termio-realize-44)[[dubious](https://en.wikipedia.org/wiki/Wikipedia:Accuracy_dispute#Disputed_statement) – [discuss](https://en.wikipedia.org/wiki/Talk:ANSI_escape_code#inconsistent_emulation)]
+        Swap foreground and background colors; inconsistent emulation[[43]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-console-termio-realize-44)
+        [[dubious](https://en.wikipedia.org/wiki/Wikipedia:Accuracy_dispute#Disputed_statement) – [discuss](https://en.wikipedia.org/wiki/Talk:ANSI_escape_code#inconsistent_emulation)]
         '''
         if enabled:
             return "\033[7m"
@@ -154,7 +157,10 @@ class Style:
     def doubly_underlined(): #21m
         '''
         Doubly underlined; or: not bold\n
-        Double-underline per ECMA-48,[[5]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-ECMA-48-5): 8.3.117  but instead disables bold intensity on several terminals, including in the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel)'s [console](https://en.wikipedia.org/wiki/Linux_console) before version 4.17.[[44]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-45)
+        Double-underline per ECMA-48,[[5]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-ECMA-48-5): 8.3.117\n
+        but instead disables bold intensity on several terminals,\n
+        including in the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel)'s
+        [console](https://en.wikipedia.org/wiki/Linux_console) before version 4.17.[[44]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-45)
         '''
         if enabled:
             return "\033[21m"
