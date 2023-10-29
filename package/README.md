@@ -10,21 +10,35 @@ pip install chromaconsole
 
 ## Functions
 ```python
+Style.disable()
+Style.enable()
+Style.reset()
 Style.bold()
+Style.faint()
 Style.italic()
 Style.underline()
-Style.strikethrough()
-Style.negative()
-Style.normal()
-Style.reset()
-Style.slowblink()
-Style.rapidblink()
+Style.slow_blink()
+Style.rapid_blink()
+Style.reverse()
 Style.hidden()
+Style.strikethrough()
+Style.not_bold()
+Style.normal_intensity()
+Style.not_italic()
+Style.not_underline()
+Style.not_blinking()
+Style.proportional_spacing()
+Style.not_reversed()
+Style.reveal()
+Style.not_strikethrough()
+Style.not_proportional_spacing()
+Style.overlined()
+Style.not_overlined()
 Style.minecraft(*args)
-Style.enable()
-Style.disable()
 Color.text(*args)
+Color.default_text()
 Color.background(*args)
+Color.default_background()
 ```
 
 ## Example usage
@@ -54,7 +68,7 @@ After executing the `Style.disable()` command, the system will no longer apply c
 ```python
 #disable the coloring and styling
 Style.disable()
-print(f"{Color.text(r, g, b)}text without color{Style.reset()}")
+print(f"{Color.text(r, g, b)}text without color and style{Style.reset()}")
 Style.enable()
-print(f"{Color.text(r, g, b)}text with color{Style.reset()}")
+print(f"{Color.text(r, g, b)}text with color and style{Style.reset()}")
 ```

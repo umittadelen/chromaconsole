@@ -22,91 +22,26 @@ FixWinConsoleColors()
 
 enabled = True
 
+#https://en.wikipedia.org/wiki/ANSI_escape_code
 class Style:
     @staticmethod
     def disable():
-        """
+        '''
         Disables all things
-        """
+        '''
         global enabled
         enabled = False
 
     @staticmethod
     def enable():
-        """
+        '''
         Enables all things
-        """
+        '''
         global enabled
         enabled = True
 
     @staticmethod
-    def bold():
-        '''
-        Bold or increased intensity\n
-        makes the text bold
-        '''
-        if enabled:
-            return "\033[1m"
-        else:
-            return ""
-
-    @staticmethod
-    def italic():
-        '''
-        Italic\n
-        makes the text italic
-        '''
-        if enabled:
-            return "\033[3m"
-        else:
-            return ""
-
-    @staticmethod
-    def underline():
-        '''
-        Underline\n
-        makes the text underlined
-        '''
-        if enabled:
-            return "\033[4m"
-        else:
-            return ""
-    
-    @staticmethod
-    def strikethrough():
-        '''
-        [Crossed-out](https://en.wikipedia.org/wiki/Strikethrough), or strike\n
-        makes the text strikethrough
-        '''
-        if enabled:
-            return "\033[9m"
-        else:
-            return ""
-    
-    @staticmethod
-    def negative():
-        """
-        [Reverse](https://en.wikipedia.org/wiki/Reverse_video) video or invert\n
-        inverts the text colors
-        """
-        if enabled:
-            return "\033[7m"
-        else:
-            return ""
-        
-    @staticmethod
-    def normal():
-        '''
-        Normal intensity\n
-        resets the style of the text
-        '''
-        if enabled:
-            return "\033[22m"
-        else:
-            return ""
-    
-    @staticmethod
-    def reset():
+    def reset(): #0m
         '''
         Reset or normal\n
         resets style and color of the text
@@ -115,37 +50,231 @@ class Style:
             return "\033[0m"
         else:
             return ""
-    
+
     @staticmethod
-    def slowblink():
+    def bold(): #1m
+        '''
+        Bold or increased intensity\n
+        As with faint, the color change is a PC (SCO / [CGA](https://en.wikipedia.org/wiki/Color_Graphics_Adapter)) invention.[[38]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-SCO-39)\n
+        '''
+        if enabled:
+            return "\033[1m"
+        else:
+            return ""
+        
+    @staticmethod
+    def faint(): #2m
+        '''
+        Faint, decreased intensity, or dim\n
+        May be implemented as a light [font weight](https://en.wikipedia.org/wiki/Font_weight) like bold.[[39]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-40)
+        '''
+        if enabled:
+            return "\033[2m"
+        else:
+            return ""
+        
+    @staticmethod
+    def italic(): #3m
+        '''
+        Italic\n
+        Not widely supported. Sometimes treated as inverse or blink.[[38]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-SCO-39)\n
+        '''
+        if enabled:
+            return "\033[3m"
+        else:
+            return ""
+        
+    @staticmethod
+    def underline(): #4m
+        '''
+        Underlined\n
+        Style extensions exist for Kitty, VTE, mintty, iTerm2 and Konsole.[[40]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-41)[[41]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-kitty-spec-42)[[42]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-konsole-43)
+        '''
+        if enabled:
+            return "\033[4m"
+        else:
+            return ""
+        
+    @staticmethod
+    def slow_blink(): #5m
         '''
         Slow blink\n
-        makes the text blinking
+        Sets blinking to less than 150 times per minute
         '''
         if enabled:
             return "\033[5m"
         else:
             return ""
-    
+        
     @staticmethod
-    def rapidblink():
+    def rapid_blink(): #6m
         '''
         Rapid blink\n
-        makes the text blinking
+        MS-DOS ANSI.SYS, 150+ per minute; not widely supported
         '''
         if enabled:
             return "\033[6m"
         else:
             return ""
-    
+        
     @staticmethod
-    def hidden():
-        """
+    def reverse(): #7m
+        '''
+        [Reverse](https://en.wikipedia.org/wiki/Reverse_video) video or invert\n
+        Swap foreground and background colors; inconsistent emulation[[43]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-console-termio-realize-44)[[dubious](https://en.wikipedia.org/wiki/Wikipedia:Accuracy_dispute#Disputed_statement) – [discuss](https://en.wikipedia.org/wiki/Talk:ANSI_escape_code#inconsistent_emulation)]
+        '''
+        if enabled:
+            return "\033[7m"
+        else:
+            return ""
+        
+    @staticmethod
+    def hidden(): #8m
+        '''
         Conceal or hide\n
-        hides the text
-        """
+        Not widely supported.
+        '''
         if enabled:
             return "\033[8m"
+        else:
+            return ""
+        
+    @staticmethod
+    def strikethrough(): #9m
+        '''
+        [Crossed-out](https://en.wikipedia.org/wiki/Strikethrough), or strike\n
+        Characters legible but marked as if for deletion. Not supported in Terminal.app.
+        '''
+        if enabled:
+            return "\033[9m"
+        else:
+            return ""
+    
+    @staticmethod
+    def not_bold(): #21m
+        '''
+        Doubly underlined; or: not bold\n
+        Double-underline per ECMA-48,[[5]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-ECMA-48-5): 8.3.117  but instead disables bold intensity on several terminals, including in the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel)'s [console](https://en.wikipedia.org/wiki/Linux_console) before version 4.17.[[44]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-45)
+        '''
+        if enabled:
+            return "\033[21m"
+        else:
+            return ""
+        
+    @staticmethod
+    def normal_intensity(): #22m
+        '''
+        Normal intensity\n
+        Neither bold nor faint; color changes where intensity is implemented as such.
+        '''
+        if enabled:
+            return "\033[22m"
+        else:
+            return ""
+
+    @staticmethod
+    def not_italic(): #23m
+        '''
+        Neither italic, nor blackletter
+        '''
+        if enabled:
+            return "\033[23m"
+        else:
+            return ""
+
+    @staticmethod
+    def not_underline(): #24m
+        '''
+        Not underlined\n
+        Neither singly nor doubly underlined
+        '''
+        if enabled:
+            return "\033[24m"
+        else:
+            return ""
+        
+    @staticmethod
+    def not_blinking(): #25m
+        '''
+        Not blinking\n
+        Turn blinking off
+        '''
+        if enabled:
+            return "\033[25m"
+        else:
+            return ""
+        
+    @staticmethod
+    def proportional_spacing(): #26m
+        '''
+        proportional_spacing\n
+        [ITU T.61](https://en.wikipedia.org/wiki/ITU_T.61) and T.416, not known to be used on terminals
+        '''
+        if enabled:
+            return "\033[26m"
+        else:
+            return ""
+        
+    @staticmethod
+    def not_reversed(): #27m
+        '''
+        not reversed
+        '''
+        if enabled:
+            return "\033[7m"
+        else:
+            return ""
+        
+    @staticmethod
+    def reveral(): #28m
+        '''
+        Reveal\n
+        Not concealed
+        '''
+        if enabled:
+            return "\033[28m"
+        else:
+            return ""
+
+    @staticmethod
+    def not_strikethrough(): #29m
+        '''
+        Not crossed out
+        '''
+        if enabled:
+            return "\033[29m"
+        else:
+            return ""
+    
+    @staticmethod
+    def not_proportional_spacing(): #50m
+        '''
+        Disable proportional spacing\n
+        T.61 and T.416
+        '''
+        if enabled:
+            return "\033[50m"
+        else:
+            return ""
+        
+    @staticmethod
+    def overlined(): #50m
+        '''
+        Overlined\n
+        Not supported in Terminal.app
+        '''
+        if enabled:
+            return "\033[50m"
+        else:
+            return ""
+        
+    @staticmethod
+    def not_overlined(): #55m
+        '''
+        Not overlined\n
+        '''
+        if enabled:
+            return "\033[55m"
         else:
             return ""
     
@@ -198,7 +327,7 @@ class Style:
     
 class Color:
     @staticmethod
-    def text(*args):
+    def text(*args): #38;2;r;g;bm
         '''
         changes the color of the text\n
         Color.text(r, g, b)\n
@@ -221,9 +350,20 @@ class Color:
             return f"\033[38;2;{r};{g};{b}m"
         else:
             return ""
-
+        
     @staticmethod
-    def background(*args):
+    def default_text(): #39m
+        '''
+        Default foreground color\n
+        Implementation defined (according to standard)
+        '''
+        if enabled:
+            return "\033[39m"
+        else:
+            return ""
+    
+    @staticmethod
+    def background(*args): #48;2;r;g;bm
         '''
         changes the color of the text background\n
         Color.background(r, g, b)\n
@@ -244,5 +384,16 @@ class Color:
                 raise ValueError("Invalid number of arguments")
 
             return f"\033[48;2;{r};{g};{b}m"
+        else:
+            return ""
+    
+    @staticmethod
+    def default_background(): #49m
+        '''
+        Default background color\n
+        Implementation defined (according to standard)
+        '''
+        if enabled:
+            return "\033[49m"
         else:
             return ""
