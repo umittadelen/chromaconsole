@@ -85,7 +85,7 @@ class Style:
             return ""
         
     @staticmethod
-    def underline(): #4m
+    def underlined(): #4m
         '''
         Underlined\n
         Style extensions exist for Kitty, VTE, mintty, iTerm2 and Konsole.[[40]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-41)[[41]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-kitty-spec-42)[[42]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-konsole-43)
@@ -151,7 +151,7 @@ class Style:
             return ""
     
     @staticmethod
-    def not_bold(): #21m
+    def doubly_underlined(): #21m
         '''
         Doubly underlined; or: not bold\n
         Double-underline per ECMA-48,[[5]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-ECMA-48-5): 8.3.117  but instead disables bold intensity on several terminals, including in the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel)'s [console](https://en.wikipedia.org/wiki/Linux_console) before version 4.17.[[44]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-45)
@@ -183,7 +183,7 @@ class Style:
             return ""
 
     @staticmethod
-    def not_underline(): #24m
+    def not_underlined(): #24m
         '''
         Not underlined\n
         Neither singly nor doubly underlined
@@ -221,12 +221,12 @@ class Style:
         not reversed
         '''
         if enabled:
-            return "\033[7m"
+            return "\033[27m"
         else:
             return ""
         
     @staticmethod
-    def reveral(): #28m
+    def reveal(): #28m
         '''
         Reveal\n
         Not concealed
@@ -307,7 +307,7 @@ class Style:
                 f"f": Color.text("#fff"),
                 f"l": Style.bold(),
                 f"m": Style.strikethrough(),
-                f"n": Style.underline(),
+                f"n": Style.underlined(),
                 f"o": Style.italic(),
                 f"r": Style.reset()
                 }

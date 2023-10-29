@@ -8,11 +8,10 @@ while True:
 '''1: install library
 2: uninstall library
 3: build
-4: upload to test.pypi.org
-5: upload to pypi.org
-6: run test.py here
-7: run test.py on CMD
-8: install from file
+4: upload to pypi.org
+5: run test.py here
+6: run test.py on CMD
+7: install from file
 > ''')
 
     if answer == '1':
