@@ -1,14 +1,14 @@
 import sys, os, platform
 
 from pkg_resources import get_distribution
-import requests
 try:
+    import requests
     version = get_distribution("chromaconsole").version
     latest_version = requests.get(f'https://pypi.org/pypi/chromaconsole/json').json()['info']['version']
     if version != latest_version:
         os.system("pip install chromaconsole -U")
-except Exception as e:
-    print(f"An error occurred: {e}")
+except:
+    pass
 
 def FixWinConsoleColors():
     if platform.system() == "Windows" and sys.stdout and hasattr(sys.stdout, "fileno"):
