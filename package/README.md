@@ -11,8 +11,8 @@ pip install chromaconsole
 ```
 
 ## Functions
-```python {.line-numbers}
->#styling
+```python
+#styling
 Style.disable()
 Style.enable()
 Style.reset()
@@ -39,10 +39,12 @@ Style.overlined()
 Style.not_overlined()
 Style.minecraft(*args)
 
->#coloring
+#coloring
 Color.text(*args)
+Color.text_gradient("text", color, color)
 Color.default_text()
 Color.background(*args)
+Color.background_gradient("text", color, color)
 Color.default_background()
 Color.text_black()
 Color.text_red()
@@ -61,7 +63,7 @@ Color.bg_magenta()
 Color.bg_cyan()
 Color.bg_white()
 
->#some other things
+#some other things
 Console.clr_scr_to_end()
 Console.clr_scr_to_begin()
 Console.clr_entire_scr()

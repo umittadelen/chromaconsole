@@ -62,7 +62,7 @@ class Color:
             interpolated_color = interpolate_color(start_color, end_color, factor)
             gradient_text += Color.text(*interpolated_color) + char
 
-        return gradient_text + "\\033[39m"
+        return gradient_text + "\033[39m"
         
     @staticmethod
     def default_text(): #39m
@@ -136,7 +136,7 @@ class Color:
             interpolated_color = interpolate_color(start_color, end_color, factor)
             gradient_text += Color.background(*interpolated_color) + char
 
-        return gradient_text + "\\033[49m"
+        return gradient_text + "\033[49m"
     
     @staticmethod
     def default_background(): #49m

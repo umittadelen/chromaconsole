@@ -27,6 +27,8 @@ text = (
     f"{Color.text('#8af')}def {Color.default_text()}text{Style.reset()}\n"
     f"{Color.text('#8af')}{Color.background('#fa8')}background{Style.reset()}\n"
     f"{Color.text('#8af')}{Color.background('#fa8')}def {Color.default_background()}background{Style.reset()}\n"
+    f"{Color.text_gradient('Gradient Text', (255,255,100), '#00f')}default text{Style.reset()}\n"
+    f"{Color.text(255,100,100)}{Color.background_gradient('Gradient Background', (255,255,100), '#00f')}default bg{Style.reset()}\n"
 )
 
 print(text)
