@@ -28,6 +28,10 @@ class Color:
         
     @staticmethod
     def text_gradient(text, start_color, end_color):
+        '''
+        this can be used to make text gradient\n
+        text_gradient(str, (r,g,b) or "#rrggbb" , (r,g,b) or "#rrggbb")
+        '''
         gradient_text = ""
 
         def interpolate_color(start_color, end_color, factor):
@@ -102,6 +106,10 @@ class Color:
         
     @staticmethod
     def background_gradient(text, start_color, end_color):
+        '''
+        this can be used to make background gradient\n
+        background_gradient(str, (r,g,b) or "#rrggbb" , (r,g,b) or "#rrggbb")
+        '''
         gradient_text = ""
 
         def interpolate_color(start_color, end_color, factor):

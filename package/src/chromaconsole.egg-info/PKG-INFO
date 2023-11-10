@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: chromaconsole
-Version: 0.4.5
+Version: 0.4.6
 Summary: A small colorful module to change text colors in terminal
 Author-email: Umit Tasdelen <umittadelen1277@gmail.com>
 Project-URL: Homepage, https://github.com/umit-09/chromaconsole
@@ -33,8 +33,8 @@ pip install chromaconsole
 ```
 
 ## Functions
-```python {.line-numbers}
->#styling
+```python
+#styling
 Style.disable()
 Style.enable()
 Style.reset()
@@ -61,7 +61,7 @@ Style.overlined()
 Style.not_overlined()
 Style.minecraft(*args)
 
->#coloring
+#coloring
 Color.text(*args)
 Color.text_gradient("text", color, color)
 Color.default_text()
@@ -85,7 +85,7 @@ Color.bg_magenta()
 Color.bg_cyan()
 Color.bg_white()
 
->#some other things
+#some other things
 Console.clr_scr_to_end()
 Console.clr_scr_to_begin()
 Console.clr_entire_scr()
