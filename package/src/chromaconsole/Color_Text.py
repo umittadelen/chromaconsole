@@ -1,6 +1,6 @@
-from ..chromaconsole import enabled
+from .chromaconsole import enabled
 
-class Text():
+class Text:
     @staticmethod
     def black():
         if enabled:

@@ -1,6 +1,6 @@
-from ..chromaconsole import enabled
+from .chromaconsole import enabled
 
-class Background():
+class Background:
     @staticmethod
     def black():
         if enabled:
@@ -56,7 +56,7 @@ class Background():
             return "\033[47m"
         else:
             return ""
-    
+        
     @staticmethod
     def br_black():
         if enabled:
