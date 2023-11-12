@@ -2,6 +2,7 @@ LICENSE.txt
 README.md
 pyproject.toml
 src/chromaconsole/Color.py
+src/chromaconsole/Color_Background.py
 src/chromaconsole/Color_Text.py
 src/chromaconsole/Color_background.py
 src/chromaconsole/Console.py
