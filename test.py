@@ -2,6 +2,10 @@ from chromaconsole import Color, Style
 
 text = (
     "normal\n"
+    f"def color:          {Color.Text.black()}██{Color.Text.red()}██{Color.Text.green()}██{Color.Text.yellow()}██{Color.Text.blue()}██{Color.Text.magenta()}██{Color.Text.cyan()}██{Color.Text.white()}██{Style.reset()}\n"
+    f"def bright color:   {Color.Text.br_black()}██{Color.Text.br_red()}██{Color.Text.br_green()}██{Color.Text.br_yellow()}██{Color.Text.br_blue()}██{Color.Text.br_magenta()}██{Color.Text.br_cyan()}██{Color.Text.br_white()}██{Style.reset()}\n"
+    f"def bg color:       {Color.Background.black()}  {Color.Background.red()}  {Color.Background.green()}  {Color.Background.yellow()}  {Color.Background.blue()}  {Color.Background.magenta()}  {Color.Background.cyan()}  {Color.Background.white()}  {Style.reset()}\n"
+    f"def bright bg color:{Color.Background.black()}  {Color.Background.br_red()}  {Color.Background.br_green()}  {Color.Background.br_yellow()}  {Color.Background.br_blue()}  {Color.Background.br_magenta()}  {Color.Background.br_cyan()}  {Color.Background.br_white()}  {Style.reset()}\n"
     f"{Color.text('#8af')}{Style.bold()}bold{Style.reset()}\n"
     f"{Color.text('#8af')}{Style.faint()}faint{Style.reset()}\n"
     f"{Color.text('#8af')}{Style.italic()}italic{Style.reset()}\n"

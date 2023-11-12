@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: chromaconsole
-Version: 0.4.6
+Version: 0.5.2
 Summary: A small colorful module to change text colors in terminal
 Author-email: Umit Tasdelen <umittadelen1277@gmail.com>
 Project-URL: Homepage, https://github.com/umit-09/chromaconsole
@@ -33,6 +33,9 @@ pip install chromaconsole
 ```
 
 ## Functions
+<details>
+<summary>Click here to see all functions</summary>
+
 ```python
 #styling
 Style.disable()
@@ -68,24 +71,40 @@ Color.default_text()
 Color.background(*args)
 Color.background_gradient("text", color, color)
 Color.default_background()
-Color.text_black()
-Color.text_red()
-Color.text_green()
-Color.text_yellow()
-Color.text_blue()
-Color.text_magenta()
-Color.text_cyan()
-Color.text_white()
-Color.bg_black()
-Color.bg_red()
-Color.bg_green()
-Color.bg_yellow()
-Color.bg_blue()
-Color.bg_magenta()
-Color.bg_cyan()
-Color.bg_white()
+Color.Text.black()
+Color.Text.red()
+Color.Text.green()
+Color.Text.yellow()
+Color.Text.blue()
+Color.Text.magenta()
+Color.Text.cyan()
+Color.Text.white()
+Color.Text.br_black()
+Color.Text.br_red()
+Color.Text.br_green()
+Color.Text.br_yellow()
+Color.Text.br_blue()
+Color.Text.br_magenta()
+Color.Text.br_cyan()
+Color.Text.br_white()
+Color.Background.black()
+Color.Background.red()
+Color.Background.green()
+Color.Background.yellow()
+Color.Background.blue()
+Color.Background.magenta()
+Color.Background.cyan()
+Color.Background.white()
+Color.Background.br_black()
+Color.Background.br_red()
+Color.Background.br_green()
+Color.Background.br_yellow()
+Color.Background.br_blue()
+Color.Background.br_magenta()
+Color.Background.br_cyan()
+Color.Background.br_white()
 
-#some other things
+#some other things (not finished)
 Console.clr_scr_to_end()
 Console.clr_scr_to_begin()
 Console.clr_entire_scr()
@@ -102,12 +121,14 @@ Console.switch_orig_scr()
 Console.show_cursor()
 Console.hide_cursor()
 ```
+</details>
 
 ## Example usage
 
 ```python
 from chromaconsole import Color, Style
 
+print(f"{Color.Text.red()}here is red colored text{Style.reset()}")
 print(f"{Color.text(r, g, b)}here is RGB colored text{Style.reset()}")
 print(f"{Color.background(r, g, b)}here is RGB colored background{Style.reset()}")
 
