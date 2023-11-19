@@ -117,10 +117,7 @@ class Color:
         Default foreground color\n
         Implementation defined (according to standard)
         '''
-        if enabled:
-            return "\033[39m"
-        else:
-            return ""
+        return "\033[39m" if enabled else ""
     
     @staticmethod
     def background(*args): #48;2;r;g;bm
@@ -195,7 +192,4 @@ class Color:
         Default background color\n
         Implementation defined (according to standard)
         '''
-        if enabled:
-            return "\033[49m"
-        else:
-            return ""
+        return "\033[49m" if enabled else ""
