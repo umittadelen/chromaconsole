@@ -1,4 +1,4 @@
-from .chromaconsole import enabled
+from .styling import Styling
 from .Color_Background import Background as background
 from .Color_Text import Text as text
 
@@ -51,7 +51,7 @@ class Color:
         Color.text(r, g, b)\n
         Color.text("#rrggbb")
         '''
-        if enabled:
+        if Styling.is_enabled():
             if len(args) == 1:
                 color = args[0].lstrip("#")
                 if len(color) == 3:
@@ -117,10 +117,7 @@ class Color:
         Default foreground color\n
         Implementation defined (according to standard)
         '''
-        if enabled:
-            return "\033[39m"
-        else:
-            return ""
+        return "\033[39m" if Styling.is_enabled() else ""
     
     @staticmethod
     def background(*args): #48;2;r;g;bm
@@ -129,7 +126,7 @@ class Color:
         Color.background(r, g, b)\n
         Color.background("#rrggbb")
         '''
-        if enabled:
+        if Styling.is_enabled():
             if len(args) == 1:
                 color = args[0].lstrip("#")
                 if len(color) == 3:
@@ -195,7 +192,4 @@ class Color:
         Default background color\n
         Implementation defined (according to standard)
         '''
-        if enabled:
-            return "\033[49m"
-        else:
-            return ""
+        return "\033[49m" if Styling.is_enabled() else ""

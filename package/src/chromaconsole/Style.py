@@ -1,5 +1,5 @@
 from .Color import Color
-from .chromaconsole import enabled
+from .styling import Styling
 
 class Style:
     @staticmethod
@@ -8,7 +8,7 @@ class Style:
         Reset or normal\n
         resets style and color of the text
         '''
-        return "\033[0m" if enabled else ""
+        return "\033[0m" if Styling.is_enabled() else ""
 
     @staticmethod
     def bold(): #1m
@@ -17,7 +17,7 @@ class Style:
         As with faint, the color change is a PC (SCO / [CGA](https://en.wikipedia.org/wiki/Color_Graphics_Adapter))
         invention.[[38]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-SCO-39)\n
         '''
-        return "\033[1m" if enabled else ""
+        return "\033[1m" if Styling.is_enabled() else ""
         
     @staticmethod
     def faint(): #2m
@@ -25,7 +25,7 @@ class Style:
         Faint, decreased intensity, or dim\n
         May be implemented as a light [font weight](https://en.wikipedia.org/wiki/Font_weight) like bold.[[39]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-40)
         '''
-        return "\033[2m" if enabled else ""
+        return "\033[2m" if Styling.is_enabled() else ""
         
     @staticmethod
     def italic(): #3m
@@ -33,7 +33,7 @@ class Style:
         Italic\n
         Not widely supported. Sometimes treated as inverse or blink.[[38]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-SCO-39)\n
         '''
-        return "\033[3m" if enabled else ""
+        return "\033[3m" if Styling.is_enabled() else ""
         
     @staticmethod
     def underlined(): #4m
@@ -42,7 +42,7 @@ class Style:
         Style extensions exist for Kitty, VTE, mintty, iTerm2 and Konsole.[[40]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-41)
         [[41]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-kitty-spec-42)[[42]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-color-u-konsole-43)
         '''
-        return "\033[4m" if enabled else ""
+        return "\033[4m" if Styling.is_enabled() else ""
         
     @staticmethod
     def slow_blink(): #5m
@@ -50,7 +50,7 @@ class Style:
         Slow blink\n
         Sets blinking to less than 150 times per minute
         '''
-        return "\033[5m" if enabled else ""
+        return "\033[5m" if Styling.is_enabled() else ""
         
     @staticmethod
     def rapid_blink(): #6m
@@ -58,7 +58,7 @@ class Style:
         Rapid blink\n
         MS-DOS ANSI.SYS, 150+ per minute; not widely supported
         '''
-        return "\033[6m" if enabled else ""
+        return "\033[6m" if Styling.is_enabled() else ""
         
     @staticmethod
     def reverse(): #7m
@@ -67,7 +67,7 @@ class Style:
         Swap foreground and background colors; inconsistent emulation[[43]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-console-termio-realize-44)
         [[dubious](https://en.wikipedia.org/wiki/Wikipedia:Accuracy_dispute#Disputed_statement) – [discuss](https://en.wikipedia.org/wiki/Talk:ANSI_escape_code#inconsistent_emulation)]
         '''
-        return "\033[7m" if enabled else ""
+        return "\033[7m" if Styling.is_enabled() else ""
         
     @staticmethod
     def hidden(): #8m
@@ -75,7 +75,7 @@ class Style:
         Conceal or hide\n
         Not widely supported.
         '''
-        return "\033[8m" if enabled else ""
+        return "\033[8m" if Styling.is_enabled() else ""
         
     @staticmethod
     def strikethrough(): #9m
@@ -83,7 +83,7 @@ class Style:
         [Crossed-out](https://en.wikipedia.org/wiki/Strikethrough), or strike\n
         Characters legible but marked as if for deletion. Not supported in Terminal.app.
         '''
-        return "\033[9m" if enabled else ""
+        return "\033[9m" if Styling.is_enabled() else ""
     
     @staticmethod
     def doubly_underlined(): #21m
@@ -94,7 +94,7 @@ class Style:
         including in the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel)'s
         [console](https://en.wikipedia.org/wiki/Linux_console) before version 4.17.[[44]](https://en.wikipedia.org/wiki/ANSI_escape_code#cite_note-45)
         '''
-        return "\033[21m" if enabled else ""
+        return "\033[21m" if Styling.is_enabled() else ""
         
     @staticmethod
     def normal_intensity(): #22m
@@ -102,14 +102,14 @@ class Style:
         Normal intensity\n
         Neither bold nor faint; color changes where intensity is implemented as such.
         '''
-        return "\033[22m" if enabled else ""
+        return "\033[22m" if Styling.is_enabled() else ""
 
     @staticmethod
     def not_italic(): #23m
         '''
         Neither italic, nor blackletter
         '''
-        return "\033[23m" if enabled else ""
+        return "\033[23m" if Styling.is_enabled() else ""
 
     @staticmethod
     def not_underlined(): #24m
@@ -117,7 +117,7 @@ class Style:
         Not underlined\n
         Neither singly nor doubly underlined
         '''
-        return "\033[24m" if enabled else ""
+        return "\033[24m" if Styling.is_enabled() else ""
         
     @staticmethod
     def not_blinking(): #25m
@@ -125,7 +125,7 @@ class Style:
         Not blinking\n
         Turn blinking off
         '''
-        return "\033[25m" if enabled else ""
+        return "\033[25m" if Styling.is_enabled() else ""
         
     @staticmethod
     def proportional_spacing(): #26m
@@ -133,14 +133,14 @@ class Style:
         proportional_spacing\n
         [ITU T.61](https://en.wikipedia.org/wiki/ITU_T.61) and T.416, not known to be used on terminals
         '''
-        return "\033[26m" if enabled else ""
+        return "\033[26m" if Styling.is_enabled() else ""
         
     @staticmethod
     def not_reversed(): #27m
         '''
         not reversed
         '''
-        return "\033[27m" if enabled else ""
+        return "\033[27m" if Styling.is_enabled() else ""
         
     @staticmethod
     def reveal(): #28m
@@ -148,14 +148,14 @@ class Style:
         Reveal\n
         Not concealed
         '''
-        return "\033[28m" if enabled else ""
+        return "\033[28m" if Styling.is_enabled() else ""
 
     @staticmethod
     def not_strikethrough(): #29m
         '''
         Not crossed out
         '''
-        return "\033[29m" if enabled else ""
+        return "\033[29m" if Styling.is_enabled() else ""
     
     @staticmethod
     def not_proportional_spacing(): #50m
@@ -163,7 +163,7 @@ class Style:
         Disable proportional spacing\n
         T.61 and T.416
         '''
-        return "\033[50m" if enabled else ""
+        return "\033[50m" if Styling.is_enabled() else ""
         
     @staticmethod
     def overlined(): #53m
@@ -171,14 +171,14 @@ class Style:
         Overlined\n
         Not supported in Terminal.app
         '''
-        return "\033[53m" if enabled else ""
+        return "\033[53m" if Styling.is_enabled() else ""
         
     @staticmethod
     def not_overlined(): #55m
         '''
         Not overlined\n
         '''
-        return "\033[55m" if enabled else ""
+        return "\033[55m" if Styling.is_enabled() else ""
     
     @staticmethod
     def minecraft(*args):
@@ -187,7 +187,7 @@ class Style:
         Style.minecraft("&","&l&ahello &r&5world&e!&r")\n
         Style.minecraft("§l§ahello §r§5world§e!§r")
         '''
-        if enabled:
+        if Styling.is_enabled():
             symbol = "§"
 
             codes = {

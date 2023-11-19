@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: chromaconsole
-Version: 0.6.3
+Version: 0.6.5
 Summary: A small colorful module to change text colors in terminal
 Author-email: Umit Tasdelen <umittadelen1277@gmail.com>
 Project-URL: Homepage, https://github.com/umit-09/chromaconsole
@@ -38,8 +38,8 @@ pip install chromaconsole
 
 ```python
 #styling
-Style.disable()
-Style.enable()
+Styling.disable()
+Styling.enable()
 Style.reset()
 Style.bold()
 Style.faint()
@@ -146,12 +146,13 @@ print(f"{Style.minecraft('§','§ahello §4world§r')}")
 
 ## .enable() and .disable():
 
-After executing the `Style.disable()` command, the system will no longer apply coloring and styling to the content. To re-enable these features, simply use the `Style.enable()` command.
+After executing the `Styling.disable()` command, the system will no longer apply coloring and styling to the content. To re-enable these features, simply use the `Styling.enable()` command.
 
 ```python
+from chromaconsole import Styling
 #disable the coloring and styling
-Style.disable()
+Styling.disable()
 print(f"{Color.text(r, g, b)}text without color and style{Style.reset()}")
-Style.enable()
+Styling.enable()
 print(f"{Color.text(r, g, b)}text with color and style{Style.reset()}")
 ```

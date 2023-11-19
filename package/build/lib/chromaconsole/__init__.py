@@ -1,13 +1,13 @@
 #https://en.wikipedia.org/wiki/ANSI_escape_code
 
-import chromaconsole
+from .styling import Styling
 from .Color import Color
 from .Console import Console
 from .Style import Style
 from .Color_Background import Background
 from .Color_Text import Text
 
-__all__ = ['Color', 'Style', 'Console']
+__all__ = ['styling', 'Color', 'Style', 'Console']
 
 try:
     import sys, os, platform

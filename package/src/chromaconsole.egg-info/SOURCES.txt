@@ -7,8 +7,9 @@ src/chromaconsole/Color_Text.py
 src/chromaconsole/Color_background.py
 src/chromaconsole/Console.py
 src/chromaconsole/Style.py
+src/chromaconsole/Styling.py
 src/chromaconsole/__init__.py
-src/chromaconsole/chromaconsole.py
+src/chromaconsole/styling.py
 src/chromaconsole.egg-info/PKG-INFO
 src/chromaconsole.egg-info/SOURCES.txt
 src/chromaconsole.egg-info/dependency_links.txt

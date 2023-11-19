@@ -16,8 +16,8 @@ pip install chromaconsole
 
 ```python
 #styling
-Style.disable()
-Style.enable()
+Styling.disable()
+Styling.enable()
 Style.reset()
 Style.bold()
 Style.faint()
@@ -124,12 +124,13 @@ print(f"{Style.minecraft('§','§ahello §4world§r')}")
 
 ## .enable() and .disable():
 
-After executing the `Style.disable()` command, the system will no longer apply coloring and styling to the content. To re-enable these features, simply use the `Style.enable()` command.
+After executing the `Styling.disable()` command, the system will no longer apply coloring and styling to the content. To re-enable these features, simply use the `Styling.enable()` command.
 
 ```python
+from chromaconsole import Styling
 #disable the coloring and styling
-Style.disable()
+Styling.disable()
 print(f"{Color.text(r, g, b)}text without color and style{Style.reset()}")
-Style.enable()
+Styling.enable()
 print(f"{Color.text(r, g, b)}text with color and style{Style.reset()}")
 ```

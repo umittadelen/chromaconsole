@@ -1,114 +1,66 @@
-from .chromaconsole import enabled
+from .styling import Styling
 
 class Text:
     @staticmethod
     def black():
-        if enabled:
-            return "\033[30m"
-        else:
-            return ""
+        return "\033[30m" if Styling.is_enabled() else ""
         
     @staticmethod
     def red():
-        if enabled:
-            return "\033[31m"
-        else:
-            return ""
+        return "\033[31m" if Styling.is_enabled() else ""
         
     @staticmethod
     def green():
-        if enabled:
-            return "\033[32m"
-        else:
-            return ""
+        return "\033[32m" if Styling.is_enabled() else ""
         
     @staticmethod
     def yellow():
-        if enabled:
-            return "\033[33m"
-        else:
-            return ""
+        return "\033[33m" if Styling.is_enabled() else ""
         
     @staticmethod
     def blue():
-        if enabled:
-            return "\033[34m"
-        else:
-            return ""
+        return "\033[34m" if Styling.is_enabled() else ""
         
     @staticmethod
     def magenta():
-        if enabled:
-            return "\033[35m"
-        else:
-            return ""
+        return "\033[35m" if Styling.is_enabled() else ""
         
     @staticmethod
     def cyan():
-        if enabled:
-            return "\033[36m"
-        else:
-            return ""
+        return "\033[36m" if Styling.is_enabled() else ""
     
     @staticmethod
     def white():
-        if enabled:
-            return "\033[37m"
-        else:
-            return ""
+        return "\033[37m" if Styling.is_enabled() else ""
     
     @staticmethod
     def br_black():
-        if enabled:
-            return "\033[90m"
-        else:
-            return ""
+        return "\033[90m" if Styling.is_enabled() else ""
         
     @staticmethod
     def br_red():
-        if enabled:
-            return "\033[91m"
-        else:
-            return ""
+        return "\033[91m" if Styling.is_enabled() else ""
         
     @staticmethod
     def br_green():
-        if enabled:
-            return "\033[92m"
-        else:
-            return ""
+        return "\033[92m" if Styling.is_enabled() else ""
         
     @staticmethod
     def br_yellow():
-        if enabled:
-            return "\033[93m"
-        else:
-            return ""
+        return "\033[93m" if Styling.is_enabled() else ""
         
     @staticmethod
     def br_blue():
-        if enabled:
-            return "\033[94m"
-        else:
-            return ""
+        return "\033[94m" if Styling.is_enabled() else ""
         
     @staticmethod
     def br_magenta():
-        if enabled:
-            return "\033[95m"
-        else:
-            return ""
+        return "\033[95m" if Styling.is_enabled() else ""
         
     @staticmethod
     def br_cyan():
-        if enabled:
-            return "\033[96m"
-        else:
-            return ""
+        return "\033[96m" if Styling.is_enabled() else ""
     
     @staticmethod
     def br_white():
-        if enabled:
-            return "\033[97m"
-        else:
-            return ""
+        return "\033[97m" if Styling.is_enabled() else ""
