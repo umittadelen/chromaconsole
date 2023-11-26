@@ -4,10 +4,8 @@ from .styling import Styling
 from .Color import Color
 from .Console import Console
 from .Style import Style
-from .Color_Background import Background
-from .Color_Text import Text
 
-__all__ = ['styling', 'Color', 'Style', 'Console']
+__all__ = ['Styling', 'Color', 'Style', 'Console']
 
 try:
     import sys, os, platform

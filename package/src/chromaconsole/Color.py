@@ -1,6 +1,6 @@
 from .styling import Styling
-from .Color_Background import Background as background
-from .Color_Text import Text as text
+from .ColorBackground import Background as background
+from .ColorText import Text as text
 
 class Color:
     class Text:

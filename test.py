@@ -1,5 +1,5 @@
 # Importing necessary modules
-from chromaconsole import Color, Style, Styling
+from chromaconsole import *
 
 # Define the text with function calls
 text = [

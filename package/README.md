@@ -2,13 +2,23 @@
 
 Chroma console is a python package for adding color and style to terminal text output using ANSI escape codes.
 
-* if *requests* is installed this package updates automaticaly
+* if ***requests*** is installed this package updates automaticaly
+* some terminals still don't support *ANSI escape*
+
+<br>
 
 ## Installation
 
 ```shell
 pip install chromaconsole
 ```
+
+<br>
+
+### How styling works
+This package works using ***[ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code)***
+
+<br>
 
 ## Functions
 <details>
@@ -101,10 +111,12 @@ Console.hide_cursor()
 ```
 </details>
 
+<br>
+
 ## Example usage
 
 ```python
-from chromaconsole import Color, Style
+from chromaconsole import *
 
 print(f"{Color.Text.red()}here is red colored text{Style.reset()}")
 print(f"{Color.text(r, g, b)}here is RGB colored text{Style.reset()}")
@@ -121,6 +133,8 @@ print(f"{Style.strikethrough()}Strikethrough {Style.reset()}")
 print(f"{Style.bold()}{Style.italic()}bold+italic {Style.reset()}")
 print(f"{Style.minecraft('§','§ahello §4world§r')}")
 ```
+
+<br>
 
 ## .enable() and .disable():
 
