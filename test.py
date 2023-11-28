@@ -46,19 +46,21 @@ Styling.enable()
 results = {}
 
 # Iterate over each line in text
-for i, line_func in enumerate(text):
+i = 0
+while i < len(text):
     # Call the function to get the line
-    line = line_func()
+    line = text[i]()
     print(line)
 
     # Get user input
-    result = input("write 1 if working (if not just enter) > ")
-    results[i] = ["Supported" if result == '1' else "Not Supported"]
+    user_input = input("next[ENTER]/prew[any]>")
+
+    if user_input != "":
+        i -= 1
+    else:
+        i += 1
+
     os.system("cls")
 
 # Disable styling
 Styling.disable()
-
-# Print the results
-for i in range(len(results)):
-    print(f"{str(i).zfill(2)}: {results[i][0]} {text[i]()}")
