@@ -156,7 +156,7 @@ This package works also in cmd directly using
 C:\Users\user> chromaconsole    #this returns package version
 ```
 #### crcon:
-you can change color and style in terminal like `color` command but more advance
+you can change color and style in terminal like `color` command but more advanced
 ```shell
 C:\Users\user> crcon <params>
 
