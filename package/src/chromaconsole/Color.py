@@ -51,20 +51,24 @@ class Color:
         Color.text(r, g, b)\n
         Color.text("#rrggbb")
         '''
+        if args[0] == "":
+            return ""
         if Styling.is_enabled():
             if len(args) == 1:
-                color = args[0].lstrip("#")
-                if len(color) == 3:
-                    r, g, b = (int(c * 2, 16) for c in color)
-                elif len(color) == 6:
-                    r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+                if type(args[0]) == tuple:
+                    r, g, b = args[0]
                 else:
-                    raise ValueError("Invalid color format")
+                    color = args[0].lstrip("#")
+                    if len(color) == 3:
+                        r, g, b = (int(c * 2, 16) for c in color)
+                    elif len(color) == 6:
+                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+                    else:
+                        raise ValueError(f"Invalid color format\n{args}")
             elif len(args) == 3:
                 r, g, b = args
             else:
                 raise ValueError("Invalid number of arguments")
-
             return f"\033[38;2;{r};{g};{b}m"
         else:
             return ""
@@ -84,20 +88,23 @@ class Color:
             )
             return interpolated_color
 
-        def parse_color(color):
-            if isinstance(color, str):
-                if color.startswith("#"):
-                    color = color.lstrip("#")
-                if len(color) == 3:
-                    color = ''.join(c * 2 for c in color)
-                if len(color) != 6:
-                    raise ValueError("Invalid color format")
-                return (
-                    int(color[0:2], 16),
-                    int(color[2:4], 16),
-                    int(color[4:6], 16)
-                )
-            return color
+        def parse_color(*args):
+            if len(args) == 1:
+                if type(args[0]) == tuple:
+                    r, g, b = args[0]
+                else:
+                    color = args[0].lstrip("#")
+                    if len(color) == 3:
+                        r, g, b = (int(c * 2, 16) for c in color)
+                    elif len(color) == 6:
+                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+                    else:
+                        raise ValueError(f"Invalid color format\n{args}")
+            elif len(args) == 3:
+                r, g, b = args
+            else:
+                raise ValueError("Invalid number of arguments")
+            return (r,g,b)
 
         start_color = parse_color(start_color)
         end_color = parse_color(end_color)
@@ -126,20 +133,24 @@ class Color:
         Color.background(r, g, b)\n
         Color.background("#rrggbb")
         '''
+        if args[0] == "":
+            return ""
         if Styling.is_enabled():
             if len(args) == 1:
-                color = args[0].lstrip("#")
-                if len(color) == 3:
-                    r, g, b = (int(c * 2, 16) for c in color)
-                elif len(color) == 6:
-                    r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+                if type(args[0]) == tuple:
+                    r, g, b = args[0]
                 else:
-                    raise ValueError("Invalid color format")
+                    color = args[0].lstrip("#")
+                    if len(color) == 3:
+                        r, g, b = (int(c * 2, 16) for c in color)
+                    elif len(color) == 6:
+                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+                    else:
+                        raise ValueError(f"Invalid color format\n{args}")
             elif len(args) == 3:
                 r, g, b = args
             else:
                 raise ValueError("Invalid number of arguments")
-
             return f"\033[48;2;{r};{g};{b}m"
         else:
             return ""
@@ -159,20 +170,23 @@ class Color:
             )
             return interpolated_color
 
-        def parse_color(color):
-            if isinstance(color, str):
-                if color.startswith("#"):
-                    color = color.lstrip("#")
-                if len(color) == 3:
-                    color = ''.join(c * 2 for c in color)
-                if len(color) != 6:
-                    raise ValueError("Invalid color format")
-                return (
-                    int(color[0:2], 16),
-                    int(color[2:4], 16),
-                    int(color[4:6], 16)
-                )
-            return color
+        def parse_color(*args):
+            if len(args) == 1:
+                if type(args[0]) == tuple:
+                    r, g, b = args[0]
+                else:
+                    color = args[0].lstrip("#")
+                    if len(color) == 3:
+                        r, g, b = (int(c * 2, 16) for c in color)
+                    elif len(color) == 6:
+                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+                    else:
+                        raise ValueError(f"Invalid color format\n{args}")
+            elif len(args) == 3:
+                r, g, b = args
+            else:
+                raise ValueError("Invalid number of arguments")
+            return (r,g,b)
 
         start_color = parse_color(start_color)
         end_color = parse_color(end_color)
