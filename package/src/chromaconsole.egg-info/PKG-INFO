@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: chromaconsole
-Version: 0.8
+Version: 0.8.1
 Summary: A small colorful module to change text colors in terminal
 Author-email: Umit Tasdelen <umittadelen1277@gmail.com>
 Project-URL: Homepage, https://github.com/umit-09/chromaconsole
@@ -178,6 +178,7 @@ This package works also in cmd directly using
 C:\Users\user> chromaconsole    #this returns package version
 ```
 #### crcon:
+you can change color and style in terminal like `color` command but more advance
 ```shell
 C:\Users\user> crcon <params>
 
