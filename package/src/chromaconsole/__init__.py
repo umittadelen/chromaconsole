@@ -89,7 +89,7 @@ def console_line(textcolor='', backgroundcolor=''):
         f"{Color.background(color_tuple(args.backgroundcolor))}"
         f"{Style.bold() if args.bold else ''}"
         f"{Style.italic() if args.italic else ''}"
-        f"{Style.underlined() if args.italic else ''}"
+        f"{Style.underlined() if args.underline else ''}"
         f"{Style.slow_blink() if args.slowblink else ''}"
         f"{Style.rapid_blink() if args.rapidblink else ''}"
         f"{Style.reverse() if args.reverse else ''}"
