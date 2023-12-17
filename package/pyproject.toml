@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chromaconsole"
-version = "0.8.2.1"
+version = "0.8.4"
 authors = [
   {name = "Umit Tasdelen", email = "umittadelen1277@gmail.com"}
 ]

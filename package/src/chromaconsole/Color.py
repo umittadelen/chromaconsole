@@ -2,6 +2,34 @@ from .styling import Styling
 from .ColorBackground import Background as background
 from .ColorText import Text as text
 
+def parse_color(*args):
+    if len(args) == 1:
+        if type(args[0]) == tuple:
+            r, g, b = args[0]           #*  (rrr,ggg,bbb)
+            return (r,g,b)
+        else:
+            color = args[0].lstrip("#")
+            if "," in color:            #*  "rrr,ggg,bbb"
+                color = color.replace(" ", "").replace("(", "").replace(")", "")
+                color = color.split(",")
+                r, g, b = map(int, color)
+                return (r,g,b)
+            if len(color) == 3:         #*  "#rgb"
+                r, g, b = (int(c * 2, 16) for c in color)
+                return (r,g,b)
+            elif len(color) == 6:       #*  "#rrggbb"
+                r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
+                return (r,g,b)
+            else:
+                raise ValueError(f"Invalid color format\n{args}")
+    elif len(args) == 3:
+        r, g, b = args
+    else:
+        raise ValueError(f"Invalid color format\n{args}")
+    
+def interpolate_color(start_color, end_color, factor):
+    return tuple(int(start + (end - start) * factor) for start, end in zip(start_color, end_color))
+
 class Color:
     class Text:
         '''
@@ -54,22 +82,7 @@ class Color:
         if args[0] == "":
             return ""
         if Styling.is_enabled():
-            if len(args) == 1:
-                if type(args[0]) == tuple:
-                    r, g, b = args[0]
-                else:
-                    color = args[0].lstrip("#")
-                    if len(color) == 3:
-                        r, g, b = (int(c * 2, 16) for c in color)
-                    elif len(color) == 6:
-                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
-                    else:
-                        raise ValueError(f"Invalid color format\n{args}")
-            elif len(args) == 3:
-                r, g, b = args
-            else:
-                raise ValueError("Invalid number of arguments")
-            return f"\033[38;2;{r};{g};{b}m"
+            return f"\033[38;2;{parse_color(*args)[0]};{parse_color(*args)[1]};{parse_color(*args)[2]}m"
         else:
             return ""
         
@@ -81,31 +94,6 @@ class Color:
         '''
         gradient_text = ""
 
-        def interpolate_color(start_color, end_color, factor):
-            interpolated_color = tuple(
-                int(start + (end - start) * factor)
-                for start, end in zip(start_color, end_color)
-            )
-            return interpolated_color
-
-        def parse_color(*args):
-            if len(args) == 1:
-                if type(args[0]) == tuple:
-                    r, g, b = args[0]
-                else:
-                    color = args[0].lstrip("#")
-                    if len(color) == 3:
-                        r, g, b = (int(c * 2, 16) for c in color)
-                    elif len(color) == 6:
-                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
-                    else:
-                        raise ValueError(f"Invalid color format\n{args}")
-            elif len(args) == 3:
-                r, g, b = args
-            else:
-                raise ValueError("Invalid number of arguments")
-            return (r,g,b)
-
         start_color = parse_color(start_color)
         end_color = parse_color(end_color)
 
@@ -114,9 +102,9 @@ class Color:
         for i, char in enumerate(text):
             factor = i * interpolation_step
             interpolated_color = interpolate_color(start_color, end_color, factor)
-            gradient_text += Color.text(*interpolated_color) + char
+            gradient_text += str(Color.text(interpolated_color)) + char
 
-        return gradient_text + "\033[39m"
+        return gradient_text + Color.default_text()
         
     @staticmethod
     def default_text(): #39m
@@ -136,22 +124,7 @@ class Color:
         if args[0] == "":
             return ""
         if Styling.is_enabled():
-            if len(args) == 1:
-                if type(args[0]) == tuple:
-                    r, g, b = args[0]
-                else:
-                    color = args[0].lstrip("#")
-                    if len(color) == 3:
-                        r, g, b = (int(c * 2, 16) for c in color)
-                    elif len(color) == 6:
-                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
-                    else:
-                        raise ValueError(f"Invalid color format\n{args}")
-            elif len(args) == 3:
-                r, g, b = args
-            else:
-                raise ValueError("Invalid number of arguments")
-            return f"\033[48;2;{r};{g};{b}m"
+            return f"\033[48;2;{parse_color(*args)[0]};{parse_color(*args)[1]};{parse_color(*args)[2]}m"
         else:
             return ""
         
@@ -163,31 +136,6 @@ class Color:
         '''
         gradient_text = ""
 
-        def interpolate_color(start_color, end_color, factor):
-            interpolated_color = tuple(
-                int(start + (end - start) * factor)
-                for start, end in zip(start_color, end_color)
-            )
-            return interpolated_color
-
-        def parse_color(*args):
-            if len(args) == 1:
-                if type(args[0]) == tuple:
-                    r, g, b = args[0]
-                else:
-                    color = args[0].lstrip("#")
-                    if len(color) == 3:
-                        r, g, b = (int(c * 2, 16) for c in color)
-                    elif len(color) == 6:
-                        r, g, b = (int(color[i:i+2], 16) for i in range(0, 6, 2))
-                    else:
-                        raise ValueError(f"Invalid color format\n{args}")
-            elif len(args) == 3:
-                r, g, b = args
-            else:
-                raise ValueError("Invalid number of arguments")
-            return (r,g,b)
-
         start_color = parse_color(start_color)
         end_color = parse_color(end_color)
 
@@ -196,9 +144,9 @@ class Color:
         for i, char in enumerate(text):
             factor = i * interpolation_step
             interpolated_color = interpolate_color(start_color, end_color, factor)
-            gradient_text += Color.background(*interpolated_color) + char
+            gradient_text += Color.background(interpolated_color) + char
 
-        return gradient_text + "\033[49m"
+        return gradient_text + Color.default_background()
     
     @staticmethod
     def default_background(): #49m
