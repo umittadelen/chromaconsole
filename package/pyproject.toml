@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chromaconsole"
-version = "0.8.4"
+version = "0.8.6.2"
 authors = [
   {name = "Umit Tasdelen", email = "umittadelen1277@gmail.com"}
 ]
@@ -28,7 +28,3 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/umit-09/chromaconsole"
 Bug_Tracker = "https://github.com/umit-09/chromaconsole/issues"
-
-[project.scripts]
-crcon="chromaconsole:console_line"
-chromaconsole="chromaconsole:check_ver"

@@ -148,30 +148,3 @@ print(f"{Color.text(r, g, b)}text without color and style{Style.reset()}")
 Styling.enable()
 print(f"{Color.text(r, g, b)}text with color and style{Style.reset()}")
 ```
-
-## console commands
-
-This package works also in cmd directly using
-```shell
-C:\Users\user> chromaconsole    #this returns package version
-```
-#### crcon:
-you can change color and style in terminal like `color` command but more advanced
-```shell
-C:\Users\user> crcon <params>
-
--c <r,g,b / ⵌrrggbb / (r,g,b)>   -# text color
--b <r,g,b / ⵌrrggbb / (r,g,b)>   -# background color
--B   -----------------------------# bold
--I   -----------------------------# italic
--U   -----------------------------# underline
--s   -----------------------------# slow blink
--r   -----------------------------# rapid blink
--R   -----------------------------# reverse
--H   -----------------------------# hidden
--S   -----------------------------# strikethrough
--D   -----------------------------# doubly underlined
--P   -----------------------------# proportional spacing
--O   -----------------------------# overlined
--X   -----------------------------# reset
-```
